@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+    width: 95%;
+    max-width: 1300px;
+    margin: 2em auto;
+    
+    display: grid;
+    gap: 1em;
+  }
+
+  .container-fluid {
+    width: 95%;
+    max-width: 100%;
+
+  }
+
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+  .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+    opacity: 0 !important; /*click effect color change*/
+    background-color: #3f51b5 !important;  }
+    
+    .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #3f51b5 !important; /*inner circle color change*/  }
+    
+    .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #3f51b5 !important; /*outer ring color change*/  }
+  
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container-wraper {
+    padding: 10px !important;
+  }
+  
+  .column-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+  
+  .full-width {
+    width: 100%;
+  }

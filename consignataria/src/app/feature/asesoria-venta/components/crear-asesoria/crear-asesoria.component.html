@@ -1,0 +1,74 @@
+<mat-card>
+    <mat-card-header>
+        <h1 mat-dialog-title>Asesorias de Venta</h1>
+    </mat-card-header>
+    <mat-card-content>
+
+        <form [formGroup]="form">
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Asesor:</mat-label>
+                        <mat-select id="idInputDocumentoAsesor" formControlName="idDocumentoAsesor">
+                            <mat-option *ngFor="let asesor of listaAsesores" 
+                            [value]="asesor.id">
+                            {{asesor.descripcion}}
+                            </mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                </div>
+            
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Fecha:</mat-label>
+                        <input type="date" id="idInputFechaAsesoria" matInput formControlName="fecha">
+                    </mat-form-field>
+                </div>
+            
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Franja: </mat-label>
+                        <mat-select id="idInputFranjaHoraria" formControlName="franjaHoraria">
+                            <mat-option *ngFor="let franja of listaFranjas" 
+                            [value]="franja.id">
+                            {{franja.descripcion}}
+                            </mat-option>
+                        </mat-select> 
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Nombre Cliente: </mat-label>
+                        <input type="text" id="idInputNombreCliente" matInput formControlName="nombreCliente">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Telefono: </mat-label>
+                        <input type="number" id="idInputTelefonoCliente" maxlength="10" matInput formControlName="telefonoCliente">
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+            <mat-divider></mat-divider>
+            <div class="row">         
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" (click)="guardarAsesoria()" type="submit"
+                        [disabled]="!form.valid">Guardar</button>
+                    <button type="button" class="btn btn-danger ml-1" (click)="close()" type="submit">Cancelar</button>
+                </div>
+                
+            </div>            
+
+        </form>
+
+    </mat-card-content>
+</mat-card>

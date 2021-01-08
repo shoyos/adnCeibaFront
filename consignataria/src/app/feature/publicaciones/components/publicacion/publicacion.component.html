@@ -1,0 +1,48 @@
+<div class="container">
+  <mat-card>
+      <mat-card-header>
+        <h1 mat-dialog-title>Automoviles disponibles</h1>
+      </mat-card-header>
+
+    <!-- Table-->
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-12" >
+          <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" (click)="agregarPublicacion()" id="btn-addPublicacion" class="btn btn-primary" margin="2" offset="2">Agregar Publicacion</button>
+          <button type="button" (click)="crearAsesoria()" id="btn-addAsesoria" class="btn btn-primary">Crear Asesoria</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12">
+            <table class="table table-striped table-light">
+              <thead>
+                <tr>
+                  <th scope="col" *ngFor="let column of headers">{{column}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let row of publicaciones">
+                  <th scope="row">{{row.placa}}</th>
+                  <td>{{row.numeroMotor}}</td>
+                  <td>{{row.kilometraje}}</td>
+                  <td>{{row.modelo}}</td>
+                  <td>{{row.cilindraje}}</td>
+                  <td>{{row.valorVenta}}</td>           
+                  <td>{{row.valorVentaCalculado}}</td>
+                  <td>{{row.fechaFinal}}</td>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" id="btn-editarPublicacion" class="btn btn-success" (click)="editarPublicacion(row)">Editar</button>
+                    <button type="button" id="btn-eliminarPublicacion" class="btn btn-danger" (click)="eliminarPublicacion(row.id)">Eliminar</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

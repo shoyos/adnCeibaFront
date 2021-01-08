@@ -1,0 +1,111 @@
+<mat-card>
+    <mat-card-header>
+        <div *ngIf = "data.modoApertura == 1">
+            <h1 mat-dialog-title>Agregar Publicación</h1>
+        </div>
+        <div *ngIf = "data.modoApertura == 2">
+            <h1 mat-dialog-title>Editar Publicación</h1>
+        </div>
+    </mat-card-header>
+    <mat-card-content>
+
+        <form [formGroup]="form">
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Placa:</mat-label>
+                        <input matInput id="idInputPlaca" formControlName="placa">
+                    </mat-form-field>
+                </div>
+            
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Numero Motor :</mat-label>
+                        <input type="text" id="idInputNumMotor" matInput formControlName="numeroMotor">
+                    </mat-form-field>
+                </div>
+            
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Kilometraje: </mat-label>
+                        <input type="number" id="idInputKilometraje" matInput formControlName="kilometraje">
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Cilindraje: </mat-label>
+                        <input type="number" id="idInputCilindraje" matInput formControlName="cilindraje">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    
+                    <mat-form-field>
+                        <mat-label>fecha Vencimiento Soat: </mat-label>
+                        <input type="date" id="idInputFechaSoat"  matInput formControlName="fechaVencimientoSoat">
+                    </mat-form-field>
+                    
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Modelo: </mat-label>
+                        <input type="number" id="idInputModelo" min="0" matInput formControlName="modelo">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Valor Venta: </mat-label>
+                        <input  type="number" id="idInputValorVenta" min="0" matInput formControlName="valorVenta">
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Tipo Publicacion: </mat-label>
+                        <mat-select id="idInputIdTipoPublicacion"  formControlName="idTipoPublicacion">
+                            <mat-option *ngFor="let tipoPublicacion of listaPublicaciones" 
+                            [value]="tipoPublicacion.idTipoPublicacion">
+                            {{tipoPublicacion.descripcion}}
+                            </mat-option>
+                        </mat-select>   
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field>
+                    <mat-label>Fecha Inicio Publicacion: </mat-label>
+                    <input type="date" id="idInputFechaInicio" matInput formControlName="fechaInicio">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <mat-divider></mat-divider>
+            <div class="row">         
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" id="btn-guardarModalPublicacion" 
+                        (click)="guardarPublicacion()" type="submit"
+                        [disabled]="!form.valid">Guardar
+                    </button>
+                    <button type="button" class="btn btn-danger ml-1" 
+                        id="btn-closePublicacionModal" (click)="close()" type="submit">Cancelar
+                    </button>
+                </div>
+                
+            </div>            
+
+        </form>
+
+    </mat-card-content>
+</mat-card>
