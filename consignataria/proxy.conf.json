@@ -1,13 +1,16 @@
 {
     "/publicaciones": {
-      "target": "http://localhost:8080",
+      "target": "http://104.45.182.234:8080/consignataria",
       "secure": false,
-      "logLevel": "debug"
+      "logLevel": "debug",
+      "changeOrigin": true
+
     },
     "/asesorias": {
-      "target": "http://localhost:8080",
+      "target": "http://104.45.182.234:8080/consignataria",
       "secure": false,
-      "logLevel": "debug"
+      "logLevel": "debug",
+      "changeOrigin": true
     }
   
-  }
+}

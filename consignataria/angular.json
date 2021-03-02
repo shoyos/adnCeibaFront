@@ -72,7 +72,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "consignataria:build:production"
+              "browserTarget": "consignataria:build:production",
+              "proxyConfig": "proxy.conf.json"
             }
           }
         },

@@ -1,0 +1,33 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: ceiba-front
+spec:
+  selector:
+    matchLabels:
+      app: ceiba-front
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: ceiba-front
+    spec:
+      containers:
+      - name: ceiba-front
+        image: shoyos29/angular:5.0
+        ports:
+        - containerPort: 80
+---
+# https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service
+kind: Service
+apiVersion: v1
+metadata:
+  name: ceiba-front-service
+spec:
+  selector:
+    app: ceiba-front
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 80
+  type: LoadBalancer

@@ -8,8 +8,9 @@ import { Injectable } from "@angular/core";
     protected http: HttpClient;
 
     //protected url = 'http://localhost:8080';
-    protected url = '/api';
-    
+    protected url = 'http://104.45.182.234:8080/consignataria';
+    //protected url = 'http://localhost:8080/consignataria';
+
     constructor(httpClient: HttpClient) {
       this.http = this.httpClient;
     }

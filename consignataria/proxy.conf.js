@@ -1,10 +1,11 @@
 const PROXY_CONFIG = [
     {
         context: [
-            "/publicaciones",
-            "/asesorias",
+            "consignataria/publicaciones",
+            "consignataria/asesorias",
         ],
-        target: "http://localhost:8080",
+        //target_dev: "http://localhost:8080",
+        target: "http://104.45.182.234:8080/",
         secure: false
     }
 ]

@@ -22,16 +22,16 @@ export class PublicacionService extends BaseService {
     */
     public obtenerTodos() : Observable<any> {
         debugger
-        return this.http.get<any>(this.endPoint)
+        return this.http.get<any>(this.url+this.endPoint)
     }
     
     public agregar(publicacion : Publicacion) : Observable<any> {
-        return this.http.post<Publicacion>(this.endPoint, publicacion)
+        return this.http.post<Publicacion>(this.url+this.endPoint, publicacion)
       
     }
 
     public eliminar(idPublicacion : number) : Observable<any> {
-        return this.http.delete<Publicacion>(this.endPoint+'/'+idPublicacion.toString())
+        return this.http.delete<Publicacion>(this.url+this.endPoint+'/'+idPublicacion.toString())
       
     }
 
